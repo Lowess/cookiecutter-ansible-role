@@ -1,0 +1,2 @@
+---
+# configuration file for ansible-role-{{ cookiecutter.role_name }}

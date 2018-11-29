@@ -1,0 +1,12 @@
+---
+
+- name: Converge
+  hosts: all
+  {% if cookiecutter.proxy_enabled == 'yes' -%}
+  {% raw -%}
+  environment: "{{ proxy_env }}"
+  {%- endraw %}
+  {%- endif %}
+  roles:
+    - role: ansible-role-{{ cookiecutter.role_name }}
+      tags: {{ cookiecutter.role_name }}
