@@ -43,7 +43,6 @@ provisioner:
       callback_whitelist: timer
       strategy: ${ANSIBLE_STRATEGY:-linear}
       strategy_plugins: /opt/mitogen/ansible_mitogen/plugins/strategy
-      vault_password_file: ${PWD}/molecule/resources/.vault
   inventory:
     links:
       group_vars: ../inventory/group_vars/
