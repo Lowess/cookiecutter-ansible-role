@@ -63,6 +63,8 @@ scenario:
 
 verifier:
   name: testinfra
+  env:
+    ANSIBLE_STRATEGY: linear
   options:
     color: 'yes'
   lint:
