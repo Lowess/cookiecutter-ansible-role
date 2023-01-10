@@ -1,0 +1,34 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+platforms:
+  - name: instance
+    image: geerlingguy/docker-ubuntu2204-ansible
+    pre_build_image: true
+    # Needed for systemd to work properly
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    command: "/sbin/init"
+    capabilities:
+      - SYS_ADMIN
+
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      callbacks_enabled: ansible.posix.timer
+      strategy_plugins: /opt/mitogen/ansible_mitogen/plugins/strategy
+      strategy: ${ANSIBLE_STRATEGY:-mitogen_linear}
+
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
+
+verifier:
+  name: ansible

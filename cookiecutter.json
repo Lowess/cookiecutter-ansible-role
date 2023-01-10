@@ -1,9 +1,6 @@
 {
-    "role_name": "role-name",
-    "scenario_name": "default",
-    "proxy_enabled": ["yes", "no"],
-    "description": "your description",
-    "company": "your company",
-    "author": "your github handle",
-    "min_ansible_version": 2.0
+    "name": "role-name",
+    "description": "Short description of what your role does",
+    "issue_tracker": "",
+    "min_ansible_version": 2.13
 }

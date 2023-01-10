@@ -1,0 +1,21 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: {{ cookiecutter.name }}
+  namespace: verity
+  author: Verity™ Engineering
+  description: {{ cookiecutter.description }}
+  company: GumGum Inc.
+  issue_tracker_url: {{ cookiecutter.issue_tracker }}
+  license: MIT
+
+  min_ansible_version: {{ cookiecutter.min_ansible_version }}
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
+
+  galaxy_tags:
+    []

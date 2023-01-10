@@ -1,0 +1,7 @@
+---
+# Molecule playbook used to verify the role execution.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks: []
